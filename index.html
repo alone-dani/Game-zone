@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAME ZONE</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #080a0f;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #090b10;
+    border-bottom: 1px solid #292d35;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff303b;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover { color: #ff303b; }
+
+.hero {
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+    background:
+        linear-gradient(90deg, #05070af2, #05070a50),
+        url("background.jpg") center / cover no-repeat;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    margin-bottom: 15px;
+}
+
+.hero h1 span { color: #ff303b; }
+
+.hero p {
+    color: #ddd;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #e92330;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 4px 3px 4px 0;
+}
+
+.btn:hover { background: #ff4550; }
+
+section { padding: 50px 8%; }
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.section-title span { color: #ff303b; }
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+.game-card {
+    background: #11151c;
+    border: 1px solid #343b47;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff303b;
+}
+
+.game-cover {
+    height: 210px;
+    overflow: hidden;
+    background: #191e27;
+}
+
+.game-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.game-info { padding: 18px; }
+
+.game-info h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.genre {
+    color: #ff4651;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.game-info p {
+    color: #c4c7ce;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.story {
+    display: none;
+    margin-top: 12px;
+}
+
+.story.show { display: block; }
+
+.downloads {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 15px;
+}
+
+.download-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #11151c;
+    border: 1px solid #343b47;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+.download-card img {
+    width: 75px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.download-card h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.download-card p {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.about {
+    text-align: center;
+    background: #10131a;
+}
+
+.about p {
+    color: #bbb;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    color: #888;
+}
+
+footer span { color: #ff303b; }
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 13px;
+    }
+
+    .hero { padding: 45px 6%; }
+    section { padding: 38px 5%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">GAME ZONE</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#downloads">Downloads</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <div>
+        <h1>WELCOME TO<br><span>GAME ZONE</span></h1>
+        <p>Your world of action, horror and adventure.</p>
+        <a href="#games" class="btn">EXPLORE GAMES</a>
+    </div>
+</div>
+
+<section id="games">
+    <h2 class="section-title">BEST <span>GAMES</span></h2>
+
+    <div class="games">
+
+        <!-- RESIDENT EVIL -->
+        <article class="game-card">
+            <div class="game-cover">
+                <img
+                    src="resident-evil.jpg"
+                    alt="Resident Evil 4 Remake cover">
+            </div>
+            <div class="game-info">
+                <h3>Resident Evil 4 Remake</h3>
+                <div class="genre">Action / Survival Horror</div>
+                <p>
+                    Leon Kennedy travels to a remote village
+                    to rescue the president's daughter.
+                    He faces terrifying enemies and a dangerous conspiracy.
+                </p>
+
+                <button class="btn"
+                    onclick="toggleStory('story1', this)">
+                    Read Story
+                </button>
+
+                <a class="btn"
+                    href="https://store.steampowered.com/app/2050650/Resident_Evil_4/"
+                    target="_blank" rel="noopener noreferrer">
+                    Download
+                </a>
+
+                <p class="story" id="story1">
+                    Leon must survive a village full of infected
+                    enemies while searching for Ashley.
+                    His mission reveals a frightening secret.
+                </p>
+            </div>
+        </article>
+
+        <!-- RED DEAD REDEMPTION 2 -->
+        <article class="game-card">
+            <div class="game-cover">
+                <img
+                    src="red-dead.jpg"
+                    alt="Red Dead Redemption 2 cover">
+            </div>
+            <div class="game-info">
+                <h3>Red Dead Redemption 2</h3>
+                <div class="genre">Action / Open World</div>
+                <p>
+                    Arthur Morgan and the Van der Linde gang
+                    struggle to survive as the Wild West changes.
+                </p>
+
+                <button class="btn"
+                    onclick="toggleStory('story2', this)">
+                    Read Story
+                </button>
+
+                <a class="btn"
+                    href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
+                    target="_blank" rel="noopener noreferrer">
+                    Download
+                </a>
+
+                <p class="story" id="story2">
+                    Arthur faces difficult choices about his gang,
+                    his loyalty and the future of his life.
+                </p>
+            </div>
+        </article>
+
+        <!-- GOD OF WAR -->
+        <article class="game-card">
+            <div class="game-cover">
+                <img
+                    src="god-of-war.jpg"
+                    alt="God of War cover">
+            </div>
+            <div class="game-info">
+                <h3>God of War</h3>
+                <div class="genre">Action / Adventure</div>
+                <p>
+                    Kratos and his son Atreus begin a dangerous
+                    journey through the world of Norse mythology.
+                </p>
+
+                <button class="btn"
+                    onclick="toggleStory('story3', this)">
+                    Read Story
+                </button>
+
+                <a class="btn"
+                    href="https://store.steampowered.com/app/1593500/God_of_War/"
+                    target="_blank" rel="noopener noreferrer">
+                    Download
+                </a>
+
+                <p class="story" id="story3">
+                    Father and son travel through dangerous lands
+                    to fulfill a final wish. Their journey tests
+                    their courage and relationship.
+                </p>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section id="downloads">
+    <h2 class="section-title">GAME <span>DOWNLOADS</span></h2>
+
+    <div class="downloads">
+
+        <div class="download-card">
+            <img src="resident-evil.jpg" alt="Resident Evil">
+            <div>
+                <h3>Resident Evil 4 Remake</h3>
+                <p>PC / Steam</p>
+                <a class="btn"
+                   href="https://store.steampowered.com/app/2050650/Resident_Evil_4/"
+                   target="_blank" rel="noopener noreferrer">
+                    Get Game
+                </a>
+            </div>
+        </div>
+
+        <div class="download-card">
+            <img src="red-dead.jpg" alt="Red Dead Redemption 2">
+            <div>
+                <h3>Red Dead Redemption 2</h3>
+                <p>PC / Steam</p>
+                <a class="btn"
+                   href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"
+                   target="_blank" rel="noopener noreferrer">
+                    Get Game
+                </a>
+            </div>
+        </div>
+
+        <div class="download-card">
+            <img src="god-of-war.jpg" alt="God of War">
+            <div>
+                <h3>God of War</h3>
+                <p>PC / Steam</p>
+                <a class="btn"
+                   href="https://store.steampowered.com/app/1593500/God_of_War/"
+                   target="_blank" rel="noopener noreferrer">
+                    Get Game
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2 class="section-title">ABOUT <span>GAME ZONE</span></h2>
+    <p>
+        GAME ZONE is a gaming website for fans of action,
+        horror, adventure and unforgettable stories.
+        Discover games and explore their worlds.
+    </p>
+</section>
+
+<footer>
+    Made by <span>Danial</span> | GAME ZONE &copy; 2026
+</footer>
+
+<script>
+function toggleStory(id, button) {
+    const story = document.getElementById(id);
+    story.classList.toggle("show");
+
+    button.textContent = story.classList.contains("show")
+        ? "Hide Story"
+        : "Read Story";
+}
+</script>
+
+</body>
+</html>
